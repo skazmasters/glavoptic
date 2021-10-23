@@ -1,0 +1,27 @@
+<header class="page-content__header header-main js-header" id="topPage">
+  <div class="header-main__content">
+    <div class="header-main__brand">
+      {{#ifCond page "home"}}
+        <span class="page-logo">
+            <img src="../assets/images/logo/logo.svg" alt="Логотип ГлавОптика">
+          </span>
+      {{else}}
+        <a class="page-logo" href="home.html">
+          <img src="../assets/images/logo/logo.svg" alt="Our logo">
+        </a>
+      {{/ifCond}}
+    </div>
+    <div class="header-main__toggle">
+      {{> blocks/menu-toggle cls="js-header__btn"}}
+    </div>
+  </div>
+  <div class="header-main__menu">
+    <nav class="header-main__nav js-header__nav">
+      <ul class="header-main__nav-list">
+        {{#each nav-menu}}
+          {{>blocks/menu-link}}
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
+</header>

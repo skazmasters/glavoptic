@@ -1,0 +1,32 @@
+@mixin base-link-hover {
+  color: $text-black;
+
+  &:hover {
+    color: $color-black;
+  }
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+@mixin font-14 {
+  font-size: .875rem;
+}
+
+@mixin font-16 {
+  font-size: 1rem;
+}
+
+@mixin font-20 {
+  font-size: 1.25rem;
+}
+
+@mixin btn-clear {
+  background: none;
+  border: none;
+}
+
+@mixin btn-base {
+  cursor: pointer;
+}

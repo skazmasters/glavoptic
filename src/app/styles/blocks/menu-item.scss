@@ -1,0 +1,10 @@
+.menu-item {
+  &__link {
+    display: block;
+    padding: 1rem 2rem;
+    @include font-20;
+    font-weight: 500;
+    line-height: 1;
+    @include base-link-hover;
+  }
+}
