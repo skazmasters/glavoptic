@@ -3,17 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 0;
   }
 
   &__content {
     flex: 0 1 650px;
-  }
-
-  &__title {
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 55px;
   }
 
   &__text {
