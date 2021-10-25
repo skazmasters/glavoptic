@@ -1,6 +1,9 @@
 .footer-main {
   color: $color-white;
   background: $color-primary-red;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
 
   &__container {
     display: flex;
@@ -25,16 +28,21 @@
   }
 
   &__logo {
-    @include media(tabletSmall) {
-      justify-self: center;
-    }
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &__menu {
+    margin-top: 25px;
   }
 
   &__copyright {
-    margin-top: 10px;
     margin-bottom: 0;
-    font-weight: 500;
-    font-size: 11px;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
 
     a {
       transition: color 350ms ease;
@@ -45,5 +53,9 @@
         color: #fafafa;
       }
     }
+  }
+
+  a {
+    font-size: inherit;
   }
 }

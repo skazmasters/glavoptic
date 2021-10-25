@@ -1,8 +1,8 @@
-@mixin base-link-hover {
-  color: $text-black;
+@mixin base-link-hover($c: $text-black) {
+  color: $c;
 
   &:hover {
-    color: $color-black;
+    color: rgba($c, .5);
   }
 }
 
