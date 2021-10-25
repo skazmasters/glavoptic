@@ -1,0 +1,41 @@
+.home-about {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+  }
+
+  &__content {
+    flex: 0 1 650px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 55px;
+  }
+
+  &__text {
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+
+    > * + * {
+      margin-top: 30px;
+    }
+  }
+
+  &__img {
+    flex: 0 1 660px;
+    display: flex;
+    margin-left: 5vw;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+

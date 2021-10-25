@@ -1,7 +1,7 @@
 .home-hero {
   position: relative;
-  min-height: calc(100vh - 100px);
-  height: 100%;
+  min-height: 600px;
+  height: calc(100vh - 100px);
 
   &__bg {
     position: absolute;
