@@ -1,6 +1,13 @@
 .section {
   padding: 100px 0;
 
+  &__box {
+    margin-top: 80px;
+    padding: 75px;
+    border: 1px solid #759B84;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
   &__title {
     font-weight: bold;
     font-size: 50px;
