@@ -49,6 +49,7 @@
     "gulp-svgstore": "^8.0.0",
     "gulp-tinypng-web": "^1.0.1",
     "gulp-webp": "^4.0.1",
+    "keen-slider": "^5.5.1",
     "node-sass-tilde-importer": "^1.0.2",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
