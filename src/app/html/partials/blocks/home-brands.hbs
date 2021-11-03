@@ -1,0 +1,38 @@
+<section class="home-products section">
+  <div class="container">
+    <div class="tabs-brands js-tabs">
+      <div class="tabs-brands__controls">
+        {{# times 12}}
+          <button class="tabs-brands__control js-tabs__control{{#ifCond this 1}} active{{/ifCond}}" data-target=".tab-{{this}}">
+            <img src="../assets/images/home/brands/{{this}}.png" alt="Alt">
+          </button>
+        {{/times}}
+      </div>
+      <div class="tabs-brands__contents">
+        {{# times 12}}
+          <div class="tabs-brands__content js-tabs__content tab-{{this}}{{#ifCond this 1}} active{{/ifCond}}">
+            <div class="tabs-brands__content-container">
+              <div class="tabs-brands__content-img">
+                <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+              </div>
+              <div class="tabs-brands__content-description">
+                <div class="tabs-brands__content-logo">
+                  <img src="../assets/images/home/brands/{{this}}.png" alt="Alt">
+                </div>
+                <h3 class="tabs-brands__content-title">СТИЛЬ <br> УСПЕШНЫХ ЛЮДЕЙ</h3>
+                <div class="tabs-brands__content-text">
+                  <p>
+                    Изысканные модели для поклонников строгих правил, броские и смелые варианты для молодежи, спортивные и яркие - для активных людей или нежные и утонченные - для настоящих романтиков.
+                  </p>
+                  <p>
+                    В оправах от Tommy Hilfiger чувствуется фирменный стиль, способный отобразить образ жизни своего владельца.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/times}}
+      </div>
+    </div>
+  </div>
+</section>
