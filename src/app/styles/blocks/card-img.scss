@@ -1,0 +1,69 @@
+@use "sass:math";
+
+.card-img {
+  display: flex;
+
+  &__img {
+    flex: 0 1 470px;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: math.div(240,470) * 100%;;
+      background-color: #c4c4c4;
+    }
+  }
+
+  &__content {
+    flex: 1 1 750px;
+    margin-left: 34px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 30px;
+    color: $text-gray;
+  }
+
+  &__text {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: $text-gray;
+
+    > * + * {
+      margin-top: 30px;
+    }
+
+    ul {
+      color: $text-gray;
+      max-width: 760px;
+
+      > * + * {
+        margin-top: 30px;
+      }
+
+      + * {
+        margin-top: 50px;
+      }
+
+      li {
+        position: relative;
+        padding-left: 31px;
+
+        &::before {
+          position: absolute;
+          top: .5em;
+          left: 0;
+          content: '';
+          width: 10px;
+          height: 10px;
+          background-color: $color-primary-red;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
