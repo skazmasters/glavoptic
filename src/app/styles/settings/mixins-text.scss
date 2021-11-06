@@ -6,6 +6,14 @@
   }
 }
 
+@mixin primary-link-hover($c: $text-black, $hover: $color-primary-red) {
+  color: $c;
+
+  &:hover {
+    color: $hover;
+  }
+}
+
 @mixin text-center {
   text-align: center;
 }
