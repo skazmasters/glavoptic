@@ -3,12 +3,28 @@
   @include flex-gap(20px);
   justify-content: space-between;
 
+  @include media(mobile, up) {
+    @include flex-gap(20px);
+  }
+
+  @include media(mobile) {
+    flex-wrap: wrap;
+    @include flex-gap(50px);
+  }
+
   &__item {
-    flex: 0 1 270px;
     padding: 25px 25px 50px;
     color: $color-white;
     background-color: $color-primary-red;
-    border-radius: 135px 135px 0 0;
+
+    @include media(mobile, up) {
+      flex: 0 1 270px;
+      border-radius: 135px 135px 0 0;
+    }
+
+    @include media(mobile) {
+      flex: 1 1 100%;
+    }
 
     > * {
       color: $color-white;
@@ -17,10 +33,13 @@
 
   &__icon {
     position: relative;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    @include media(mobile, up) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
 
     + * {
       margin-top: 25px;
