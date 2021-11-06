@@ -2,10 +2,19 @@
 
 .tabs-brands {
   &__controls {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(auto, 190px));
-    grid-gap: 3vh  5vw;
-    align-items: center;
+    @include media(mobile, up) {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(auto, 190px));
+      grid-gap: 3vh  5vw;
+      align-items: center;
+    }
+
+    @include media(mobile) {
+      display: flex;
+      max-width: 100vw;
+      overflow: auto;
+      @include flex-gap(30px)
+    }
   }
 
   &__control {
@@ -14,6 +23,14 @@
     padding: 1rem;
     cursor: pointer;
     opacity: .3;
+
+    @include media(mobile) {
+      flex: 0 0 60px;
+      align-items: center;
+      padding: 9px;
+      width: 60px;
+      height: 60px;
+    }
 
     &.active {
       opacity: 1;
@@ -37,6 +54,10 @@
     margin: 0 auto;
     display: flex;
     //gap: clamp(60px, 8vw, 120px);
+
+    @include media(mobile) {
+      display: block;
+    }
   }
 
   &__content-img {
@@ -65,11 +86,18 @@
 
   &__content-description {
     flex: 1 1 630px;
-    margin-left: clamp(60px, 8vw, 120px);
+
+    @include media(mobile, up) {
+      margin-left: clamp(60px, 8vw, 120px);
+    }
   }
 
   &__content-logo {
     max-width: 130px;
+
+    @include media(mobile) {
+      display: none;
+    }
   }
 
   &__content-title {
@@ -78,6 +106,12 @@
     font-weight: bold;
     font-size: 30px;
     line-height: 35px;
+
+    @include media(mobile) {
+      margin-top: 50px;
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 
   &__content-text {
@@ -85,5 +119,11 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
+
+    @include media(mobile) {
+      margin-top: 30px;
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 }
