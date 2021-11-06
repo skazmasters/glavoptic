@@ -1,7 +1,10 @@
 .home-hero {
   position: relative;
   min-height: 600px;
-  height: calc(100vh - 100px);
+
+  @include media(mobile, up) {
+    height: calc(100vh - 100px);
+  }
 
   &__bg {
     @include media(mobile, up) {

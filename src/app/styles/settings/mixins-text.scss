@@ -38,3 +38,9 @@
 @mixin btn-base {
   cursor: pointer;
 }
+
+
+@mixin font-m-14 {
+  font-size: 14px;
+  line-height: 19px;
+}

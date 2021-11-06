@@ -1,16 +1,33 @@
+@use "sass:math";
+
 .home-about {
-  padding-top: 320px;
   overflow: hidden;
+
+  @include media(mobile, up) {
+    padding-top: 320px;
+  }
+
+  @include media(mobile) {
+    padding-top: 120px;
+  }
 
   &__container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include media(mobile) {
+      flex-wrap: wrap;
+    }
   }
 
   &__content {
     flex: 0 1 650px;
+
+    @include media(mobile) {
+      margin-top: 50px;
+    }
   }
 
   &__circle {
@@ -23,6 +40,10 @@
     align-items: center;
     justify-content: center;
     max-width: min(25vw, 480px);
+
+    @include media(mobile) {
+      max-width: min(50vw, 400px);
+    }
 
     img {
       width: 100%;
@@ -38,19 +59,44 @@
     font-size: 20px;
     line-height: 30px;
 
+    @include media(mobile) {
+      margin-top: 30px;
+      @include font-m-14;
+    }
+
     > * + * {
       margin-top: 30px;
+
+      @include media(mobile) {
+        margin-top: 19px;
+      }
     }
   }
 
   &__img {
+    position: relative;
     flex: 0 1 660px;
     display: flex;
-    margin-left: 5vw;
+
+    @include media(mobile, up) {
+      margin-left: 5vw;
+    }
+
+    @include media(mobile) {
+      order: -1;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: math.div(245,335) * 100%;
+    }
 
     img {
+      @include fill;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

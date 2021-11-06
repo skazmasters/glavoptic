@@ -1,0 +1,7 @@
+@mixin fill($digit: 0) {
+  position: absolute;
+  top: $digit;
+  bottom: $digit;
+  left: $digit;
+  right: $digit;
+}

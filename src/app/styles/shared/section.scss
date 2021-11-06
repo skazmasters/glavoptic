@@ -1,6 +1,10 @@
 .section {
   padding: 100px 0;
 
+  @include media(mobile) {
+    padding: 50px 0;
+  }
+
   &__box {
     margin-top: 80px;
     padding: 75px;
@@ -12,5 +16,10 @@
     font-weight: bold;
     font-size: 50px;
     line-height: 55px;
+
+    @include media(mobile) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 }
