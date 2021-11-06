@@ -43,6 +43,10 @@
   fill: #fff;
   cursor: pointer;
   @include btn-clear;
+
+  @include media(mobile) {
+    display: none;
+  }
 }
 
 .arrow--left {

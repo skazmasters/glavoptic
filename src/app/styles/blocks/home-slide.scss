@@ -1,7 +1,12 @@
+@use "sass:math";
+
 .home-slide {
   position: relative;
-  display: flex;
-  align-items: center;
+
+  @include media(mobile, up) {
+    display: flex;
+    align-items: center;
+  }
 
   &::before {
     content: '';
@@ -9,21 +14,28 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
     background: rgba(118, 157, 132, 0.3);
-
   }
 
   &__container {
-    height: 100%;
     width: 100%;
-    max-width: 60vw;
-    min-height: 69.5vh;
-    padding-top: 9.25vh;
-    padding-left: 7.2vw;
-    padding-bottom: 9.25vh;
+
     background-color: $color-white;
-    border-radius: 0 375px 375px 0;
+
+    @include media(mobile, up) {
+      height: 100%;
+      max-width: 60vw;
+      min-height: 69.5vh;
+      padding-top: 9.25vh;
+      padding-left: 7.2vw;
+      padding-bottom: 9.25vh;
+      border-radius: 0 375px 375px 0;
+    }
+
+    @include media(mobile) {
+      padding: 15px 20px 60px;
+    }
   }
 
   &__content {
@@ -37,8 +49,18 @@
       font-size: 20px;
       line-height: 25px;
 
+      @include media(mobile) {
+        margin-top: 19px;
+        font-size: 14px;
+        line-height: 19px;
+      }
+
       > * + * {
         margin-top: 25px;
+
+        @include media(mobile) {
+          margin-top: 19px;
+        }
       }
     }
 
@@ -66,6 +88,11 @@
     line-height: 35px;
     color: $text-gray;
 
+    @include media(mobile) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
     span {
       display: block;
       margin-bottom: 50px;
@@ -74,23 +101,45 @@
       font-size: 100px;
       line-height: 105px;
       color: $text-black;
+
+      @include media(mobile) {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 15px;
+      }
     }
   }
 
   &__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
     display: flex;
+
+    @include media(mobile, up) {
+      @include fill;
+      z-index: -1;
+    }
+
+    @include media(mobile) {
+      position: relative;
+    }
+
+    &::before {
+      @include media(mobile) {
+        content: '';
+        display: block;
+        padding-top: math.div(152,375) * 100%;
+      }
+    }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top right;
+
+      @include media(mobile) {
+        object-position: center;
+        @include fill;
+      }
     }
   }
 }
