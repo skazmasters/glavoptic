@@ -24,11 +24,19 @@
     //  //box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     //}
 
+    @include media(mobile) {
+      padding: 27px 20px;
+    }
+
   }
 
   &__brand {
     flex: 0 1 auto;
     display: flex;
+
+    @include media(mobile) {
+      flex-basis: 145px;
+    }
   }
 
   &__toggle {

@@ -32,7 +32,12 @@
   position: relative;
   display: inline-block;
   width: 35px;
-  height: 24px
+  height: 24px;
+
+  @include media(mobile) {
+    height: 15px;
+    width: 24px;
+  }
 }
 
 .hamburger-inner {
@@ -51,7 +56,11 @@
   transition-duration: .15s;
   transition-property: transform;
   border-radius: 4px;
-  background-color: black
+  background-color: black;
+
+  @include media(mobile) {
+    height: 2px;
+  }
 }
 
 .hamburger-inner:after,
@@ -61,11 +70,19 @@
 }
 
 .hamburger-inner:before {
-  top: -10px
+  top: -10px;
+
+  @include media(mobile) {
+    top: -5px;
+  }
 }
 
 .hamburger-inner:after {
-  bottom: -10px
+  bottom: -10px;
+
+  @include media(mobile) {
+    bottom: -5px;
+  }
 }
 
 .hamburger--spin .hamburger-inner {
