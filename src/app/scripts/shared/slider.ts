@@ -8,8 +8,8 @@ export class Slider {
   constructor(el: sliderNode) {
     this.$node = el
 
-    console.log()
-    console.log('inited')
+    // console.log()
+    // console.log('inited')
     this.setup()
   }
 

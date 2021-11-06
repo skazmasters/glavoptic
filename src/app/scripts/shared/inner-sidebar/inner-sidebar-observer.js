@@ -1,10 +1,26 @@
-import { offResize, onResize } from '@app/core/resize-observer'
-import { Widget } from '@app/core/widget'
-import { Layout } from '@app/core/layout'
+import {offResize, onResize} from '@app/core/resize-observer'
+import {Widget} from '@app/core/widget'
+import {Layout} from '@app/core/layout'
+import {ScrollToLink} from '@app/core/scroll-to-link'
+
+// export class SidebarObserver {
+//   constructor(node) {
+//     console.log('new node: ', node)
+//   }
+//
+//   static init(el) {
+//     el && new SidebarObserver(el)
+//   }
+// }
 
 export class InnerSidebarObserver extends Widget {
-  constructor(node) {
-    super(node, '.js-inner-sidebar')
+  constructor(node, index) {
+    super(node, '.js-sidebar')
+
+    this.nodeID = index
+
+    this.$sections = this.$node.querySelectorAll('.js-sidebar__section')
+    this.$navbar = this.$node.querySelector('.js-sidebar__nav')
 
     this.observer = null
     this.offset = {
@@ -47,8 +63,24 @@ export class InnerSidebarObserver extends Widget {
 
   initObserver() {
     this.observer = this.createObserver()
-    const sections = document.querySelectorAll('.js-sidebar-block')
-    sections.forEach((section) => this.observer.observe(section))
+
+    const anchors = []
+
+    this.$sections.forEach((section, idx) => {
+      const uid = `section-${this.nodeID}-${idx}`
+      const title = section.querySelector('.tabs-products__section-title').textContent
+
+      section.setAttribute('id', uid)
+      anchors.push(`<li><a href="#${uid}">${title}</a></li>`)
+
+      this.observer.observe(section)
+    })
+
+    // console.log(anchors)
+    this.$navbar.insertAdjacentHTML('beforeend', `<ul class="sidebar-nav__list">${anchors.join('')}</ul>`)
+
+    // init nav links
+    this.$navbar.querySelectorAll('a').forEach((el) => new ScrollToLink(el))
   }
 
   createObserver() {
@@ -83,26 +115,26 @@ export class InnerSidebarObserver extends Widget {
   }
 
   getNavById(id) {
-    return this.$node.querySelector(`[href="#${id}"]`)
+    return this.$navbar.querySelector(`[href="#${id}"]`)
   }
 
   getNavByIndex(index) {
-    return this.$node.querySelector(`[data-index="${index}"]`)
+    return this.$navbar.querySelector(`[data-index="${index}"]`)
   }
 
   getAllNavItems() {
-    return this.$node.querySelectorAll('[href]')
+    return this.$navbar.querySelectorAll('[href]')
   }
 
   getActiveNav() {
-    return this.$node.querySelector(`[href].active`)
+    return this.$navbar.querySelector(`[href].active`)
   }
 
   setActiveNav(elem) {
     elem && elem.classList.add('active')
 
     if (elem && (Layout.isMobileLayout() || (Layout.isTabletLayout() && !Layout.isBigTabletLayout()))) {
-      document.querySelectorAll('.js-inner-sidebar.fixed .sidebar-nav__list a').forEach(($link) => {
+      this.$node.querySelectorAll('.js-inner-sidebar.fixed .sidebar-nav__list a').forEach(($link) => {
         $link.classList.toggle('active', $link.innerText === elem.innerText)
         if ($link.innerText === elem.innerText) {
           const $row = document.querySelector('.js-inner-sidebar.fixed .sidebar-nav__container')
@@ -124,13 +156,13 @@ export class InnerSidebarObserver extends Widget {
 
   get observerConfig() {
     return {
-      rootMargin: '-5% 0% -92% 0%',
+      rootMargin: '5% 0% -70% 0%',
       threshold: 0,
     }
   }
 
-  static init(el) {
-    new InnerSidebarObserver(el)
+  static init(el, index) {
+    new InnerSidebarObserver(el, index)
   }
 }
 

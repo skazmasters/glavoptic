@@ -2,6 +2,7 @@ import { onScroll } from '@app/core/scroll-observer'
 import { onResize } from '@app/core/resize-observer'
 import { startScrollTo } from '@app/core/scroll-to'
 import { isMobileLayout } from '@app/core/layout'
+import { getScrollPos } from '@app/core/scroll-control'
 
 export class ScrollToLink {
   constructor(nodeElement) {

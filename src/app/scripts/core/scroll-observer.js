@@ -14,10 +14,12 @@ class ScrollObserver extends Observer {
       () => {
         if (this.ticking) return null
         this.ticking = true
-        requestAnimationFrame(() => {
-          this.listeners.forEach((fn) => fn())
-          this.ticking = false
-        })
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            this.listeners.forEach((fn) => fn())
+            this.ticking = false
+          })
+        )
       },
       true
     )

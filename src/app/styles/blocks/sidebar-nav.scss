@@ -40,19 +40,16 @@
       display: flex;
     }
 
-    li {
-      border-top: 1px solid $text-gray;
-
-      &:first-child {
-        border-top: unset;
-      }
-    }
-
     a {
       display: block;
-      padding: 18px 0;
+      padding: 20px;
       margin: 0;
-      color: $text-black;
+      color: $text-gray;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 25px;
+      transition: all 350ms ease;
+      background-color: rgba($color-primary-red, 0);
       //@include text-h6;
 
       @include media(tabletSmall) {
@@ -65,11 +62,12 @@
       }
 
       &:hover {
-        color: $text-gray;
+        color: $color-primary-red;
       }
 
       &.active {
-        color: $color-primary-red;
+        color: $color-white;
+        background-color: $color-primary-red;
       }
     }
   }

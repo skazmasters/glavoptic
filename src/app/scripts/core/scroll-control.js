@@ -1,85 +1,88 @@
+import { isMobileLayout } from '@app/core/layout'
+import { onScroll } from '@app/core/scroll-observer'
+
 class ScrollControl {
   constructor() {
-    this.isFixedScroll = false;
-    this.lastScrollPos = this._getScrollPos();
+    this.isFixedScroll = false
+    this.lastScrollPos = this._getScrollPos()
 
     onScroll(() => {
-      if (this.isFixedScroll) return false;
-      this.lastScrollPos = this._getScrollPos();
-    });
+      if (this.isFixedScroll) return false
+      this.lastScrollPos = this._getScrollPos()
+    })
   }
 
   _getScrollPos() {
-    return window.pageYOffset;
+    return window.pageYOffset
   }
 
   showScrollbar() {
     if (!document.body.classList.contains('fixed-scroll')) {
-      return false;
+      return false
     }
 
-    document.body.classList.remove('fixed-scroll');
-    document.body.style.paddingRight = ``;
+    document.body.classList.remove('fixed-scroll')
+    document.body.style.paddingRight = ``
 
     if (isMobileLayout()) {
-      this.lastScrollPos = parseFloat(getComputedStyle(document.body).top || '0');
-      document.body.style.top = ``;
-      window.scrollTo(0, this.lastScrollPos * -1);
+      this.lastScrollPos = parseFloat(getComputedStyle(document.body).top || '0')
+      document.body.style.top = ``
+      window.scrollTo(0, this.lastScrollPos * -1)
     }
 
-    this.isFixedScroll = false;
-    return true;
+    this.isFixedScroll = false
+    return true
   }
 
   hideScrollbar(callback) {
     if (document.body.classList.contains('fixed-scroll')) {
-      return false;
+      return false
     }
 
     if (isMobileLayout()) {
-      document.body.style.top = `-${this.lastScrollPos}px`;
+      document.body.style.top = `-${this.lastScrollPos}px`
     }
 
-    const scrollBarWidth = ScrollControl._calcScrollbarWidth();
+    const scrollBarWidth = ScrollControl._calcScrollbarWidth()
 
-    document.body.classList.add('fixed-scroll');
-    document.body.style.paddingRight = scrollBarWidth;
+    document.body.classList.add('fixed-scroll')
+    document.body.style.paddingRight = scrollBarWidth
 
     if (callback) {
-      callback(scrollBarWidth);
+      callback(scrollBarWidth)
     }
 
-    this.isFixedScroll = true;
-    return true;
+    this.isFixedScroll = true
+    return true
   }
 
   getScrollbarState() {
-    return this.isFixedScroll;
+    return this.isFixedScroll
   }
 
   getLastScrollPos() {
-    return this.lastScrollPos;
+    return this.lastScrollPos
   }
 
   static _calcScrollbarWidth() {
-    const scrollbarMeasure = document.createElement('div');
-    scrollbarMeasure.className = 'scroll-measure';
+    const scrollbarMeasure = document.createElement('div')
+    scrollbarMeasure.className = 'scroll-measure'
 
-    document.body.appendChild(scrollbarMeasure);
+    document.body.appendChild(scrollbarMeasure)
 
-    const offsetWidth = scrollbarMeasure.offsetWidth;
-    const clientWidth = scrollbarMeasure.clientWidth;
-    const scrollbarWidth = `${offsetWidth - clientWidth}px`;
+    const offsetWidth = scrollbarMeasure.offsetWidth
+    const clientWidth = scrollbarMeasure.clientWidth
+    const scrollbarWidth = `${offsetWidth - clientWidth}px`
 
-    document.body.removeChild(scrollbarMeasure);
+    document.body.removeChild(scrollbarMeasure)
 
-    return scrollbarWidth;
+    return scrollbarWidth
   }
 }
 
-const scrollControl = new ScrollControl();
+const scrollControl = new ScrollControl()
 
-window.showScrollbar = scrollControl.showScrollbar.bind(scrollControl);
-window.hideScrollbar = scrollControl.hideScrollbar.bind(scrollControl);
-window.getScrollPos = scrollControl.getLastScrollPos.bind(scrollControl);
-window.isFixedSCroll = scrollControl.getScrollbarState.bind(scrollControl);
+export const showScrollbar = scrollControl.showScrollbar.bind(scrollControl)
+export const hideScrollbar = scrollControl.hideScrollbar.bind(scrollControl)
+export const getScrollPos = scrollControl.getLastScrollPos.bind(scrollControl)
+export const isFixedScroll = scrollControl.getScrollbarState.bind(scrollControl)

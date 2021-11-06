@@ -3,7 +3,9 @@ import { Widget } from '@app/core/widget'
 
 export class InnerSidebarDesktop extends Widget {
   constructor(node) {
-    super(node, '.js-inner-sidebar', 'tablet up')
+    super(node, '.js-sidebar', 'tablet up')
+
+    this.$navbar = this.$node.querySelector('.js-sidebar__nav')
 
     this.stickyElement = null
 
@@ -19,12 +21,12 @@ export class InnerSidebarDesktop extends Widget {
   }
 
   events() {
-    this.stickyElement = stickybits(this.$node, this.stickyOptions)
+    this.stickyElement = stickybits(this.$navbar, this.stickyOptions)
   }
 
   get stickyOptions() {
     return {
-      stickyBitStickyOffset: 100,
+      stickyBitStickyOffset: document.querySelector('.js-header').getBoundingClientRect().height,
     }
   }
 

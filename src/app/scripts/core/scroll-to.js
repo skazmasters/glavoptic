@@ -1,10 +1,12 @@
+import { getScrollPos } from '@app/core/scroll-control'
+
 export class ScrollTo {
   static scrollToTop() {
     const duration = 1200
     const startPos = getScrollPos()
     const startTime = performance.now()
 
-    raf(animation)
+    requestAnimationFrame(animation)
 
     function animation(currentTime) {
       const elapsedTime = currentTime - startTime
@@ -12,16 +14,24 @@ export class ScrollTo {
 
       scrollTo(0, nextStep)
 
-      if (elapsedTime < duration) raf(animation)
+      if (elapsedTime < duration) requestAnimationFrame(animation)
     }
   }
 
   static startAnimation(targetElem, noAnimate) {
     let targetPos = targetElem.getBoundingClientRect().top
 
-    if (document.querySelector('.js-inner-header')) {
-      //targetPos -= 60;
+    const header = document.querySelector('.js-header')
+
+    // console.log('h', header.getBoundingClientRect().height)
+
+    if (header) {
+      targetPos -= header.getBoundingClientRect().height
     }
+
+    // if (document.querySelector('.js-inner-header')) {
+    //   //targetPos -= 60;
+    // }
 
     if (noAnimate) {
       ScrollTo.respond(targetElem)
@@ -40,7 +50,7 @@ export class ScrollTo {
     const startPos = getScrollPos()
     const startTime = performance.now()
 
-    raf(animation)
+    requestAnimationFrame(animation)
 
     function animation(currentTime) {
       const elapsedTime = currentTime - startTime
@@ -48,7 +58,7 @@ export class ScrollTo {
 
       scrollTo(0, nextStep)
 
-      if (elapsedTime < duration) raf(animation)
+      if (elapsedTime < duration) requestAnimationFrame(animation)
       else ScrollTo.respond(targetElem)
     }
   }

@@ -9,7 +9,7 @@ export const app = (): void => {
     header()
     SliderManager.init('.js-slider')
     TabsUI.init()
-    InnerSidebar.init(document.querySelector('.js-inner-sidebar'))
+    InnerSidebar.init(document.querySelectorAll('.js-sidebar'))
     document.querySelectorAll('.js-scroll-to').forEach((element: HTMLElement) => new ScrollToLink(element))
     document.querySelectorAll('.js-scroll-to-top').forEach((element: HTMLElement) => new ScrollToTop(element))
   })

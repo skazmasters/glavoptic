@@ -1,5 +1,7 @@
 import { Widget } from '@app/core/widget'
-import { onResize } from '@app/core/resize-observer'
+import { offResize, onResize } from '@app/core/resize-observer'
+import { offScroll, onScroll } from '@app/core/scroll-observer'
+import { getScrollPos } from '@app/core/scroll-control'
 
 export class InnerSidebarMobile extends Widget {
   constructor(node) {
