@@ -6,14 +6,17 @@
   }
 
   &__box {
-    margin-top: 80px;
-    padding: 75px;
-    border: 1px solid #759B84;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    @include media(mobile, up) {
+      margin-top: 80px;
+      padding: 75px;
+      border: 1px solid #759B84;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    }
 
     @include media(mobile) {
-      margin-top: 50px;
-      padding: 20px;
+      margin: 50px -20px 0;
+      padding: 30px 20px;
+      border-top: 1px solid $color-primary-red;
     }
   }
 
