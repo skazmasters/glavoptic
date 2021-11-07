@@ -11,13 +11,13 @@
     align-items: center;
     flex-shrink: 0;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 0;
     }
 
     &::after,
     &::before {
-      @include media(mobile, up) {
+      @include media(tabletSmall, up) {
         flex: 0 0 min(7vw, 125px);
         content: '';
         display: block;
@@ -38,7 +38,7 @@
     border: 2px solid #f7f7f7;
     white-space: nowrap;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 20px 35px;
       font-size: 14px;
       line-height: 19px;
@@ -61,7 +61,7 @@
     padding: 80px 0 100px;
     background-color: $color-theme-white;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 30px 0 50px;
     }
   }
@@ -75,7 +75,12 @@
     font-size: 50px;
     line-height: 55px;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    @include media(tabletSmall) {
       font-size: 16px;
       line-height: 21px;
     }
@@ -86,12 +91,12 @@
     grid-gap: 50px;
     margin-top: 50px;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin-top: 30px;
     }
 
     &--2-columns {
-      @include media(mobile, up) {
+      @include media(tabletSmall, up) {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -108,7 +113,7 @@
     > * + * {
       margin-top: 80px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 50px;
       }
     }
@@ -118,7 +123,11 @@
     flex: 0 1 315px;
     align-self: start;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      flex: 0 1 275px
+    }
+
+    @include media(tabletSmall) {
       display: none;
     }
   }

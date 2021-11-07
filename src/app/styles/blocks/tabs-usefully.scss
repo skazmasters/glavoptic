@@ -11,13 +11,13 @@
     align-items: center;
     flex-shrink: 0;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 0;
     }
 
     &::after,
     &::before {
-      @include media(mobile, up) {
+      @include media(tabletSmall, up) {
         flex: 0 0 min(7vw, 125px);
         content: '';
         display: block;
@@ -38,7 +38,7 @@
     border: 2px solid #F7F7F7;
     white-space: nowrap;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 20px 35px;
       font-size: 14px;
       line-height: 19px;
@@ -61,7 +61,7 @@
     padding: 80px 0 100px;
     background-color: $color-theme-white;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 30px 0 50px;
     }
   }
@@ -76,7 +76,7 @@
     grid-template-columns: minmax(auto, 660px) minmax(auto, 760px);
     grid-gap: 50px min(7vw, 125px);
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       grid-template-areas: 'img' 'title' 'text';
       grid-template-columns: 1fr;
       grid-gap: 30px;
@@ -96,7 +96,12 @@
     line-height: 35px;
     color: $text-gray;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    @include media(tabletSmall) {
       font-size: 14px;
       line-height: 19px;
     }
@@ -112,7 +117,7 @@
       display: block;
       padding-top: math.div(700,660) * 100%;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         padding-top: 56%;
       }
     }
@@ -136,7 +141,12 @@
     font-size: 20px;
     line-height: 30px;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    @include media(tabletSmall) {
       font-size: 14px;
       line-height: 19px;
     }
@@ -144,7 +154,7 @@
     > * + * {
       margin-top: 30px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 19px;
       }
     }
@@ -160,7 +170,7 @@
     //  > * + * {
     //    margin-top: 30px;
     //
-    //    @include media(mobile) {
+    //    @include media(tabletSmall) {
     //      margin-top: 19px;
     //    }
     //  }

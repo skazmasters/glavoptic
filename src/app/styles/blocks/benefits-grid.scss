@@ -3,11 +3,11 @@
   @include flex-gap(20px);
   justify-content: space-between;
 
-  @include media(mobile, up) {
+  @include media(tabletSmall, up) {
     @include flex-gap(20px);
   }
 
-  @include media(mobile) {
+  @include media(tabletSmall) {
     flex-wrap: wrap;
     @include flex-gap(50px);
   }
@@ -17,12 +17,12 @@
     color: $color-white;
     background-color: $color-primary-red;
 
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       flex: 0 1 270px;
       border-radius: 135px 135px 0 0;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       flex: 1 1 100%;
     }
 
@@ -34,7 +34,7 @@
   &__icon {
     position: relative;
 
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       display: flex;
       align-items: center;
       justify-content: center;

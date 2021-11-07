@@ -44,7 +44,7 @@
   cursor: pointer;
   @include btn-clear;
 
-  @include media(mobile) {
+  @include media(tabletSmall) {
     display: none;
   }
 }

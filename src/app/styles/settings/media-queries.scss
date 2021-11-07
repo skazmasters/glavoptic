@@ -42,7 +42,7 @@
         } => @media (max-height:650px)
 
       - ширина:
-        @include media(mobile) {
+        @include media(tabletSmall) {
             .card-test-block {
               color: white;
             }

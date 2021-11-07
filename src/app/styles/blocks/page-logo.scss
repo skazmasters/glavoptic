@@ -6,7 +6,7 @@
   img {
     height: 43px;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       height: auto;
       width: 100%;
     }

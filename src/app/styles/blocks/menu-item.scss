@@ -7,7 +7,7 @@
     line-height: 1;
     @include primary-link-hover;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       font-size: 16px;
       line-height: 21px;
     }

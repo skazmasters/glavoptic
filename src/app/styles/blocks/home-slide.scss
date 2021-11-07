@@ -3,7 +3,7 @@
 .home-slide {
   position: relative;
 
-  @include media(mobile, up) {
+  @include media(tabletSmall, up) {
     display: flex;
     align-items: center;
   }
@@ -23,7 +23,7 @@
 
     background-color: $color-white;
 
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       height: 100%;
       max-width: 60vw;
       min-height: 69.5vh;
@@ -33,7 +33,7 @@
       border-radius: 0 375px 375px 0;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 15px 20px 60px;
     }
   }
@@ -49,7 +49,13 @@
       font-size: 20px;
       line-height: 25px;
 
-      @include media(mobile) {
+      @include media(tablet, only) {
+        margin-top: 25px;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      @include media(tabletSmall) {
         margin-top: 19px;
         font-size: 14px;
         line-height: 19px;
@@ -58,7 +64,7 @@
       > * + * {
         margin-top: 25px;
 
-        @include media(mobile) {
+        @include media(tabletSmall) {
           margin-top: 19px;
         }
       }
@@ -88,7 +94,12 @@
     line-height: 35px;
     color: $text-gray;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    @include media(tabletSmall) {
       font-size: 14px;
       line-height: 19px;
     }
@@ -102,7 +113,13 @@
       line-height: 105px;
       color: $text-black;
 
-      @include media(mobile) {
+      @include media(tablet, only) {
+        margin-bottom: 30px;
+        font-size: 70px;
+        line-height: 1;
+      }
+
+      @include media(tabletSmall) {
         font-size: 16px;
         line-height: 21px;
         margin-bottom: 15px;
@@ -113,17 +130,17 @@
   &__bg {
     display: flex;
 
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       @include fill;
       z-index: -1;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       position: relative;
     }
 
     &::before {
-      @include media(mobile) {
+      @include media(tabletSmall) {
         content: '';
         display: block;
         padding-top: math.div(152,375) * 100%;
@@ -136,7 +153,7 @@
       object-fit: cover;
       object-position: top right;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         object-position: center;
         @include fill;
       }

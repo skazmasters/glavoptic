@@ -3,7 +3,12 @@
   font-size: 20px;
   line-height: 30px;
 
-  @include media(mobile) {
+  @include media(tablet, only) {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  @include media(tabletSmall) {
     font-size: 14px;
     line-height: 19px;
   }
@@ -11,7 +16,7 @@
   > * + * {
     margin-top: 30px;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin-top: 15px;
     }
   }
@@ -22,7 +27,12 @@
     line-height: 30px;
     color: $text-gray;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    @include media(tabletSmall) {
       font-size: 14px;
       line-height: 19px;
     }
@@ -35,7 +45,7 @@
       position: relative;
       padding-left: 22px + 40px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         padding-left: 19px + 10px;
       }
     }
@@ -61,7 +71,11 @@
         border-radius: 50%;
         transform: translateY(-50%);
 
-        @include media(mobile) {
+        @include media(tablet, only) {
+          font-size: 18px;
+        }
+
+        @include media(tabletSmall) {
           padding: 1px 6px 4px;
           font-size: 14px;
           line-height: 1;
@@ -77,7 +91,7 @@
     > * + * {
       margin-top: 30px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 15px;
       }
     }
@@ -85,7 +99,7 @@
     + * {
       margin-top: 50px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 30px;
       }
     }
@@ -104,7 +118,7 @@
         background-color: $color-primary-red;
         border-radius: 50%;
 
-        @include media(mobile) {
+        @include media(tabletSmall) {
           top: .35em
         }
       }
@@ -117,7 +131,12 @@
     line-height: 35px;
     color: $text-gray;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    @include media(tabletSmall) {
       font-size: 14px;
       line-height: 19px;
     }
@@ -125,7 +144,7 @@
     + * {
       margin-top: 50px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 30px;
       }
     }

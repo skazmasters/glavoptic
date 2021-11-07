@@ -1,19 +1,23 @@
 .section {
   padding: 100px 0;
 
-  @include media(mobile) {
+  @include media(tablet, only) {
+    padding: 80px 0;
+  }
+
+  @include media(tabletSmall) {
     padding: 50px 0;
   }
 
   &__box {
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       margin-top: 80px;
       padding: 75px;
       border: 1px solid #759B84;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin: 50px -20px 0;
       padding: 30px 20px;
       border-top: 1px solid $color-primary-red;
@@ -25,7 +29,12 @@
     font-size: 50px;
     line-height: 55px;
 
-    @include media(mobile) {
+    @include media(tablet, only) {
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    @include media(tabletSmall) {
       font-size: 16px;
       line-height: 21px;
     }

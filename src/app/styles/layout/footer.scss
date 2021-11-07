@@ -5,7 +5,7 @@
   font-size: 20px;
   line-height: 25px;
 
-  @include media(mobile) {;
+  @include media(tabletSmall) {;
     font-size: 14px;
     line-height: 19px;
   }
@@ -20,13 +20,13 @@
       padding-top: 70px;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding-top: 30px;
       display: block;
     }
 
     * + * {
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 50px;
       }
     }
@@ -37,7 +37,7 @@
     font-size: 30px;
     line-height: 1;
 
-    @include media(mobile) {;
+    @include media(tabletSmall) {;
       font-size: 16px;
       line-height: 21px;
     }
@@ -46,7 +46,7 @@
   &__menu {
     margin-top: 25px;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin-top: 15px;
     }
   }
@@ -58,7 +58,7 @@
     &:not(:first-child) {
       margin-top: 30px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin-top: 15px;
       }
     }

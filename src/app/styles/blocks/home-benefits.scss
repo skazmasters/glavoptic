@@ -2,7 +2,7 @@
   &__content {
     margin-top: 80px;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin-top: 50px;
     }
   }

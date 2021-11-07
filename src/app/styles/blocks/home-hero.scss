@@ -2,12 +2,17 @@
   position: relative;
   min-height: 600px;
 
-  @include media(mobile, up) {
+  @include media(tablet, up) {
     height: calc(100vh - 100px);
+    min-height: 600px;
+  }
+
+  @include media(mobile) {
+    min-height: 600px;
   }
 
   &__bg {
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       position: absolute;
       top: 0;
       left: 0;
@@ -19,7 +24,7 @@
       align-items: center;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin-top: 50px;
     }
   }
@@ -32,11 +37,11 @@
     border-radius: 50% 50% 0 0;
     overflow: hidden;
 
-    @include media(mobile, up) {
+    @include media(tabletSmall, up) {
       width: 49vw;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       &:before {
         content: '';
         display: block;
@@ -61,7 +66,7 @@
     padding-top: 17vh;
     padding-bottom: 17vh;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding-top: 50px;
       padding-bottom: 50px;
     }
@@ -75,10 +80,14 @@
     line-height: 1;
     color: $text-black;
 
-    @include media(mobile) {
-      font-size: clamp(32px, 10vw, 100px);
+    @include media(tabletSmall) {
+      font-size: clamp(32px, 7vw, 100px);
       line-height: 1.1;
       max-width: 50vw;
+    }
+
+    @include media(mobile) {
+      font-size: clamp(32px, 10vw, 100px);
     }
 
     @include media(sm, down, true) {

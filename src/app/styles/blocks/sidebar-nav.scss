@@ -18,7 +18,7 @@
       //@include hide-scrollbar;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       margin: 0 -15px;
     }
   }
@@ -29,15 +29,16 @@
       padding: 0 10px;
     }
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 0 5px;
     }
   }
 
   &__list {
     @include media(tabletSmall) {
-      flex: 1 0 100%;
+      //flex: 1 0 100%;
       display: flex;
+      width: 100%;
     }
 
     a {
@@ -52,12 +53,17 @@
       background-color: rgba($color-primary-red, 0);
       //@include text-h6;
 
+      @include media(tablet, only) {
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
       @include media(tabletSmall) {
         padding: 20px 10px;
         white-space: nowrap;
       }
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         padding: 15px 10px;
       }
 
@@ -91,7 +97,7 @@
     .sidebar-nav__container {
       margin: 0 -10px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         margin: 0 -5px;
       }
     }
@@ -99,7 +105,7 @@
     .sidebar-nav__list {
       padding: 0 10px;
 
-      @include media(mobile) {
+      @include media(tabletSmall) {
         padding: 0 5px;
       }
     }

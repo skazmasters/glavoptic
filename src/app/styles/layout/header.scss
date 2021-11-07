@@ -24,17 +24,17 @@
     //  //box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     //}
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       padding: 27px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-
   }
 
   &__brand {
     flex: 0 1 auto;
     display: flex;
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       flex-basis: 145px;
     }
   }
@@ -43,7 +43,7 @@
     order: 1;
     transform: translateX(.5rem);
 
-    @include media(mobile) {
+    @include media(tabletSmall) {
       transform: translateX(.25rem);
     }
   }
