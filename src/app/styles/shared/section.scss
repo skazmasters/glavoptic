@@ -10,6 +10,11 @@
     padding: 75px;
     border: 1px solid #759B84;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+    @include media(mobile) {
+      margin-top: 50px;
+      padding: 20px;
+    }
   }
 
   &__title {
