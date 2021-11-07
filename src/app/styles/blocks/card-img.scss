@@ -1,7 +1,9 @@
 @use "sass:math";
 
 .card-img {
-  display: flex;
+  @include media(mobile, up) {
+    display: flex;
+  }
 
   &__img {
     flex: 0 1 470px;
@@ -9,14 +11,21 @@
     &::before {
       content: '';
       display: block;
-      padding-top: math.div(240,470) * 100%;;
+      padding-top: math.div(240,470) * 100%;
       background-color: #c4c4c4;
     }
   }
 
   &__content {
     flex: 1 1 750px;
-    margin-left: 34px;
+
+    @include media(mobile, up) {
+      margin-left: 34px;
+    }
+
+    @include media(mobile) {
+      margin-top: 15px;
+    }
   }
 
   &__title {
@@ -24,6 +33,11 @@
     font-size: 30px;
     line-height: 30px;
     color: $text-gray;
+
+    @include media(mobile) {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 
   &__text {
@@ -32,6 +46,12 @@
     font-size: 20px;
     line-height: 30px;
     color: $text-gray;
+
+    @include media(mobile) {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 19px;
+    }
 
     > * + * {
       margin-top: 30px;
@@ -43,6 +63,10 @@
 
       > * + * {
         margin-top: 30px;
+
+        @include media(mobile) {
+          margin-top: 19px;
+        }
       }
 
       + * {
@@ -53,6 +77,10 @@
         position: relative;
         padding-left: 31px;
 
+        @include media(mobile) {
+          padding-left: 25px;
+        }
+
         &::before {
           position: absolute;
           top: .5em;
@@ -62,6 +90,12 @@
           height: 10px;
           background-color: $color-primary-red;
           border-radius: 50%;
+
+          @include media(mobile) {
+            top: .35em;
+            width: 8px;
+            height: 8px;
+          }
         }
       }
     }
