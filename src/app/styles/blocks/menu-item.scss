@@ -6,5 +6,10 @@
     font-weight: 500;
     line-height: 1;
     @include primary-link-hover;
+
+    @include media(mobile) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 }

@@ -39,8 +39,9 @@
     white-space: nowrap;
 
     @include media(mobile) {
-      font-size: 16px;
-      line-height: 21px;
+      padding: 20px 35px;
+      font-size: 14px;
+      line-height: 19px;
     }
 
     &:hover {
@@ -59,6 +60,10 @@
   &__contents {
     padding: 80px 0 100px;
     background-color: $color-theme-white;
+
+    @include media(mobile) {
+      padding: 30px 0 50px;
+    }
   }
 
   &__section {
