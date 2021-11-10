@@ -1,0 +1,39 @@
+.popup-appointment {
+  padding: Min(100px, 10vmin);
+
+  @include media(mobile) {
+    padding: 50px 20px;
+    width: calc(100vw - 28px);
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: $text-black;
+    display: block;
+
+    @include media(mobile) {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__content {
+    margin-top: 50px;
+
+    @include media(mobile, up) {
+      display: flex;
+      @include flex-gap(80px);
+    }
+
+    @include media(mobile) {
+      margin-top: 30px;
+
+      > * + * {
+        margin-top: 25px;
+      }
+    }
+  }
+}

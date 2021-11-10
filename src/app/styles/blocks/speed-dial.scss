@@ -35,10 +35,12 @@
     right: 0;
     bottom: calc(1.35 * var(--size) * var(--shift));
     opacity: 0;
+    border: none;
     //transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
     transform:  translateY(calc(-1 * var(--shift) * var(--factor))) ;
     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
     pointer-events: none;
+    cursor: pointer;
 
     .open & {
       pointer-events: auto;
@@ -101,10 +103,6 @@
     transition: all 350ms ease;
     color: $text-black;
     box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.15);
-
-    &:not(&.is-active) {
-      pointer-events: none;
-    }
   }
 
 

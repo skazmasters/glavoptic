@@ -109,7 +109,7 @@ export class PopupManager {
     document.querySelectorAll('.js-popup-open[data-popup]').forEach((button) => {
       button.addEventListener('click', (e) => {
         e.preventDefault()
-        this.open(e.target.dataset.popup)
+        this.open(e.target.closest('[data-popup]').dataset.popup)
       })
     })
   }

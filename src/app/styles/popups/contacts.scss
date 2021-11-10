@@ -1,0 +1,113 @@
+.popup-contacts {
+  padding: Min(100px, 10vmin);
+
+  @include media(mobile) {
+    padding: 50px 20px;
+    width: calc(100vw - 28px);
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: $text-black;
+    display: block;
+
+    @include media(mobile) {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__content {
+    margin-top: 50px;
+
+    @include media(mobile, up) {
+      display: flex;
+      @include flex-gap(80px);
+    }
+
+    @include media(mobile) {
+      margin-top: 30px;
+
+      > * + * {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  &__column {
+    > * + * {
+      margin-top: 25px;
+    }
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+
+    @include media(mobile) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  &__item-text {
+    display: block;
+    font-weight: 800;
+    color: $text-gray;
+
+    a {
+      font-weight: 800;
+      color: $text-gray;
+
+      &:hover {
+        color: $color-primary-red;
+      }
+    }
+  }
+
+  &__submit {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &__normal {
+    margin: 0 45px;
+
+    @include media(mobile) {
+      margin: 0;
+    }
+  }
+
+  &__success, &__failure {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  &__form {
+    margin-top: 40px;
+    width: 330px;
+    max-width: 100%;
+  }
+
+  &__input {
+    margin-top: 20px;
+
+    @include media(mobile) {
+      margin-top: 10px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
