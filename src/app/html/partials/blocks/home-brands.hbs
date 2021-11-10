@@ -3,35 +3,285 @@
     <div class="tabs-brands js-tabs">
       <div class="tabs-brands__controls">
         {{# times 12}}
-          <button class="tabs-brands__control js-tabs__control{{#ifCond this 1}} active{{/ifCond}}" data-target=".tab-{{this}}">
+          <button class="tabs-brands__control js-tabs__control{{#ifCond this 1}} active{{/ifCond}}"
+                  data-target=".tab-{{this}}">
             <img src="../assets/images/home/brands/{{this}}.png" alt="Alt">
           </button>
         {{/times}}
       </div>
       <div class="tabs-brands__contents">
-        {{# times 12}}
-          <div class="tabs-brands__content js-tabs__content tab-{{this}}{{#ifCond this 1}} active{{/ifCond}}">
-            <div class="tabs-brands__content-container">
-              <div class="tabs-brands__content-img">
-                <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+        <div class="tabs-brands__content js-tabs__content tab-1 active">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/1.png" alt="Alt">
               </div>
-              <div class="tabs-brands__content-description">
-                <div class="tabs-brands__content-logo">
-                  <img src="../assets/images/home/brands/{{this}}.png" alt="Alt">
-                </div>
-                <h3 class="tabs-brands__content-title">СТИЛЬ <br> УСПЕШНЫХ ЛЮДЕЙ</h3>
-                <div class="tabs-brands__content-text">
-                  <p>
-                    Изысканные модели для поклонников строгих правил, броские и смелые варианты для молодежи, спортивные и яркие - для активных людей или нежные и утонченные - для настоящих романтиков.
-                  </p>
-                  <p>
-                    В оправах от Tommy Hilfiger чувствуется фирменный стиль, способный отобразить образ жизни своего владельца.
-                  </p>
-                </div>
+              <h3 class="tabs-brands__content-title">СТИЛЬ <br> УСПЕШНЫХ ЛЮДЕЙ</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Изысканные модели для поклонников строгих правил, броские и смелые варианты для молодежи, спортивные и
+                  яркие - для активных людей или нежные и утонченные - для настоящих романтиков.
+                </p>
+                <p>
+                  В оправах от Tommy Hilfiger чувствуется фирменный стиль, способный отобразить образ жизни своего
+                  владельца.
+                </p>
               </div>
             </div>
           </div>
-        {{/times}}
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-2">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/2.png" alt="Silhouette">
+              </div>
+              <h3 class="tabs-brands__content-title">Silhouette</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Создавая бренд Silhouette, супруги Аннелиза и Арнольд Шмид стремились претворить в жизнь свой главный
+                  замысел: разработать очки, в которых можно было бы не только великолепно видеть, но и выглядеть. В
+                  1964 году первая, сделанная по большей части вручную, коллекция оправ Silhouette покинула фабрику в
+                  Линце (Австрия), чтобы отправиться покорять сердца покупателей. Чутье и дальновидность не подвели чету
+                  Шмид: в скором времени бренд Silhouette яркой звездой засиял на оптическом небосводе.
+                </p>
+                <p>
+                  Своего рода визитной карточкой Silhouette является появившаяся на рынке в 1999 году коллекция
+                  легчайших титановых
+                  безободковых и бесшарнирных конструкций Titan Minimal Art (TMA), в которой великолепно проявился
+                  присущий Silhouette дух новаторства. Оправы и солнцезащитные очки этой марки, гарантирующей
+                  пользователям максимальный комфорт и свободу самовыражения, давно уже стали излюбленным аксессуаром
+                  суперзвезд и постоянными «гостями» самых значимых кинофестивалей, а также главных показов мод в
+                  Париже, Милане и Нью-Йорке.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-3">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/3.png" alt="HUGO BOSS">
+              </div>
+              <h3 class="tabs-brands__content-title">HUGO BOSS</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Оправы и солнцезащитные очки коллекции Boss Eyewear выпускаются с 1990 года и идеально сочетаются с
+                  линиями классической одежды для успешных мужчин Black Label и для уверенных деловых женщин Boss Woman.
+                  Стильный дизайн, высококачественные материалы и узнаваемый логотип марки, украшающий заушники моделей,
+                  прекрасно дополнят образ делового мужчины. Женские модели коллекции Boss Eyewear отличаются элегантным
+                  дизайном в стиле минимализма.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-4">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/4.png" alt="MaxMara">
+              </div>
+              <h3 class="tabs-brands__content-title">MaxMara</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Сегодня миллионы женщин выбирают одежду и аксессуары марки Max Mara за их сдержанную элегантность и
+                  комфорт. Оправы и солнцезащитные очки Max Mara – это посвящение современницам, которые умеют
+                  руководить транснациональными корпорациями – и успевают ходить на романтические свидания, живут на
+                  высоких скоростях большого города – и находят время побыть наедине с собой. Актуальный дизайн моделей
+                  в сочетании с классическими формами позволяет женщине создавать самые разные образы, подчеркивая
+                  многогранность своей натуры и при этом неизменно оставаться элегантной.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-5">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/5.png" alt="Ana Hickmann">
+              </div>
+              <h3 class="tabs-brands__content-title">Ana Hickmann</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  «Для женщины очки — это власть! Благодаря очкам она может спрятаться, может привлечь внимание, может
+                  стать совсем другой!» Ana Hickmann Бренд выражает истинную женственность и вневременную элегантность,
+                  характеризуется использованием высококачественных материалов, сочетающих классические детали и
+                  современный дизайн. Современность и традиции, смешанные с элегантностью и простотой. Коллекция оправ
+                  Ana Hickmann - качественные очки, вдохновлённые самыми значимыми брендами в мире моды, по доступной
+                  цене. Концепция доступной роскоши.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-6">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/6.png" alt="JAGUAR">
+              </div>
+              <h3 class="tabs-brands__content-title">JAGUAR</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Оправы и солнцезащитные очки коллекций Jaguar от немецкой компании Menrad the Vision своими
+                  динамичными линиями, выверенными пропорциями и особым шиком напоминают о культовых автомобилях, в
+                  которых комфорт и скорость соединяются, реализуя мечту каждого автомобилиста. Создатели очков
+                  коллекций используют элементы автомобильного дизайна и цветовую гамму, характерную для машин Jaguar
+                  нового поколения, которая включает в себя такие оттенки, как бирюзовый и золотистый, и, конечно,
+                  красный цвет. В результате оправы и солнцезащитные очки Jaguar имеют великолепные аэродинамические
+                  характеристики и сочетают в себе изысканный дизайн, свойственный классическим формам, и динамику
+                  спортивного стиля. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-7">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/7.png" alt="Max&Co">
+              </div>
+              <h3 class="tabs-brands__content-title">Энергичный дизайн и масса очарования.</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Непредсказуемые комбинации цветов и изысканные оттенки. Коллекции оправ торговой марки Max & Co
+                  представляет ряд эклектичных эксклюзивных моделей: стильный акцент подчеркивает индивидуальность
+                  владельца.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-8">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/8.png" alt="PIERRE CARDIN">
+              </div>
+              <h3 class="tabs-brands__content-title">PIERRE CARDIN</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Оправы корригирующих очков для мужчин квадратной формы выдержаны в классическом стиле. Рамки оправ
+                  сделаны из легкой стали, а на заушниках из ацетата целлюлозы для максимального комфорта установлены
+                  гибкие крепления. Силуэт стилизованного логотипа появляется на замках крепления заушников на фоне
+                  сдержанных оттенков: бронзово-черный, матовый черный с серо-зеленым, золотой с ореховым и коричневый с
+                  янтарно-оливковым. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-9">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/9.png" alt="NEOLOOK">
+              </div>
+              <h3 class="tabs-brands__content-title">NEOLOOK</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Коллекция оправ под брендом Neolook, принадлежит успешной марке, в которой инновации и мода гармонично
+                  дополняют друг друга, что в сочетании с доступными ценами и богатым ассортиментным рядом делает ее
+                  продукцию одним из лидеров продаж на российском рынке. Мужские оправы выполнены в стиле новой
+                  классики, в которой проверенные временем формы приобретают современную динамику и яркость. Женские
+                  модели линии Neolook Glamour отличаются изяществом форм, богатой палитрой красок и разнообразием
+                  стилистических направлений.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-10">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/10.png" alt="">
+              </div>
+              <h3 class="tabs-brands__content-title"></h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-11">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/11.png" alt="Marc Jacobs">
+              </div>
+              <h3 class="tabs-brands__content-title">Оправы вне времени.</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                  Линейка женских медицинских оправ американского бренда Marc Jacobs - это удивительная палитра
+                  сочетания форм и цветов. Кроме того, оправы отличаются исключительной практичностью благодаря
+                  облегчённому и устойчивому к царапинам материалу оправ и анатомической форме заушин.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-brands__content js-tabs__content tab-12">
+          <div class="tabs-brands__content-container">
+            <div class="tabs-brands__content-img">
+              <img src="../assets/images/home/slider/01.jpg" alt="Alt">
+            </div>
+            <div class="tabs-brands__content-description">
+              <div class="tabs-brands__content-logo">
+                <img src="../assets/images/home/brands/12.png" alt="SeeMo">
+              </div>
+              <h3 class="tabs-brands__content-title">SeeMo</h3>
+              <div class="tabs-brands__content-text">
+                <p>
+                </p>
+                <p>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
