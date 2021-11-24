@@ -4,3 +4,9 @@
 @import "blocks/index";
 @import "pages/index";
 @import "popups/index";
+
+a {
+  &:visited {
+    color: inherit;
+  }
+}

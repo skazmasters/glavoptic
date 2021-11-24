@@ -1,5 +1,5 @@
 .popup-appointment {
-  padding: Min(100px, 10vmin);
+  padding: Min(60px, 10vmin) Min(50px, 7vmin);
 
   @include media(mobile) {
     padding: 50px 20px;
@@ -21,7 +21,7 @@
   }
 
   &__content {
-    margin-top: 50px;
+    margin-top: 30px;
 
     @include media(mobile, up) {
       display: flex;

@@ -1,10 +1,13 @@
+@use "sass:math";
+
+
 .home-hero {
   position: relative;
-  min-height: 600px;
+  min-height: 500px;
 
-  @include media(tablet, up) {
-    height: calc(100vh - 100px);
-    min-height: 600px;
+  @include media(tabletSmall, up) {
+    height: clamp(500px, calc(100vh - 50px), 690px);
+    //min-height: 600px;
   }
 
   @include media(mobile) {
@@ -31,15 +34,19 @@
 
   &__bg-content {
     position: relative;
-    display: flex;
     height: 100%;
     background: #C4C4C4;
     border-radius: 50% 50% 0 0;
     overflow: hidden;
+    aspect-ratio: 665 / 690;
 
-    @include media(tabletSmall, up) {
-      width: 49vw;
+    @supports not (aspect-ratio: 1 / 1) {
+      width: math.div(665,1360) * 100vw;
     }
+
+    //@include media(tabletSmall, up) {
+    //  width: 49vw;
+    //}
 
     @include media(tabletSmall) {
       &:before {
@@ -73,11 +80,11 @@
   }
 
   &__title {
-    max-width: 31vw;
+    //max-width: 31vw;
     font-style: normal;
     font-weight: bold;
-    font-size: clamp(48px, 5.4vw, 100px);
-    line-height: 1;
+    font-size: 65px;
+    line-height: 1.1;
     color: $text-black;
 
     @include media(tabletSmall) {
