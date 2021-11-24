@@ -4,7 +4,8 @@
   overflow: hidden;
 
   @include media(tabletSmall, up) {
-    padding-top: clamp(180px, 10vh, 320px);
+    //padding-top: clamp(180px, 10vh, 320px);
+    padding-top: 210px;
   }
 
   @include media(tabletSmall) {
@@ -14,7 +15,7 @@
   &__container {
     position: relative;
     display: flex;
-    align-items: center;
+    //align-items: center;
     justify-content: space-between;
 
     @include media(tabletSmall) {
@@ -23,7 +24,7 @@
   }
 
   &__content {
-    flex: 0 1 650px;
+    flex: 0 1 515px;
 
     @include media(tabletSmall) {
       flex-basis: 100%;
@@ -40,7 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: min(25vw, 480px);
+    max-width: min(25vw, 320px);
 
     @include media(tabletSmall) {
       max-width: min(50vw, 400px);
@@ -55,10 +56,10 @@
   }
 
   &__text {
-    margin-top: 50px;
+    margin-top: 30px;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 23px;
 
     @include media(tablet, only) {
       font-size: 18px;
@@ -71,17 +72,17 @@
     }
 
     > * + * {
-      margin-top: 30px;
+      margin-top: 15px;
 
-      @include media(tabletSmall) {
-        margin-top: 19px;
-      }
+      //@include media(tabletSmall) {
+      //  margin-top: 19px;
+      //}
     }
   }
 
   &__img {
     position: relative;
-    flex: 0 1 660px;
+    flex: 0 1 535px;
     display: flex;
 
     @include media(tabletSmall, up) {
@@ -96,7 +97,8 @@
     &::before {
       content: '';
       display: block;
-      padding-top: math.div(245,335) * 100%;
+      width: 100%;
+      padding-top: math.div(460,535) * 100%;
 
       @include media(tabletSmall) {
         padding-top: 56%;
