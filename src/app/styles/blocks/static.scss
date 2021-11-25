@@ -29,10 +29,6 @@
     counter-reset: list;
     color: $text-gray;
 
-    > * + * {
-      margin-top: 30px;
-    }
-
     li {
       position: relative;
       padding-left: 13px + 25px;
@@ -81,10 +77,6 @@
     color: $text-gray;
     max-width: 760px;
 
-    > * + * {
-      margin-top: 15px;
-    }
-
     li {
       position: relative;
       padding-left: 20px;
@@ -103,6 +95,13 @@
         //  top: .35em
         //}
       }
+    }
+  }
+
+
+  ul, ol {
+    > * + * {
+      margin-top: 15px;
     }
   }
 

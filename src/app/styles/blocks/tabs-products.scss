@@ -92,9 +92,9 @@
     grid-gap: 25px;
     margin-top: 30px;
 
-    //@include media(tabletSmall) {
-    //  margin-top: 30px;
-    //}
+    @include media(tabletSmall) {
+      margin-top: 20px;
+    }
 
     > .static {
       max-width: 510px;
@@ -136,6 +136,10 @@
 
     > * + * {
       margin-top: 50px;
+
+      @include media(tabletSmall) {
+        margin-top: 30px;
+      }
     }
   }
 

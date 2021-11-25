@@ -28,7 +28,7 @@
 
     @include media(tabletSmall) {
       flex-basis: 100%;
-      margin-top: 50px;
+      margin-top: 20px;
     }
   }
 
@@ -67,7 +67,7 @@
     }
 
     @include media(tabletSmall) {
-      margin-top: 30px;
+      margin-top: 15px;
       @include font-m-14;
     }
 
@@ -101,7 +101,7 @@
       padding-top: math.div(460,535) * 100%;
 
       @include media(tabletSmall) {
-        padding-top: 56%;
+        padding-top: math.div(300,350) * 100%;
       }
     }
 

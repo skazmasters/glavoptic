@@ -20,6 +20,10 @@
       display: block;
       padding-top: math.div(240,470) * 100%;
       background-color: #c4c4c4;
+
+      @include media(mobile) {
+        padding-top: math.div(170,350) * 100%;
+      }
     }
 
     img {
