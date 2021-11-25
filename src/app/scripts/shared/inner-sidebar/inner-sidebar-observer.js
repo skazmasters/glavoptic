@@ -68,7 +68,8 @@ export class InnerSidebarObserver extends Widget {
 
     this.$sections.forEach((section, idx) => {
       const uid = `section-${this.nodeID}-${idx}`
-      const title = section.querySelector('.tabs-products__section-title').textContent
+      const title = section.querySelector('.tabs-products__section-title').innerHTML
+      title.replaceAll(/<br>/g, ' ')
 
       section.setAttribute('id', uid)
       anchors.push(`<li><a href="#${uid}">${title}</a></li>`)

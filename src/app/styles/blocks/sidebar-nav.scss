@@ -43,20 +43,14 @@
 
     a {
       display: block;
-      padding: 20px;
+      padding: 20px 15px;
       margin: 0;
       color: $text-gray;
       font-weight: bold;
-      font-size: 20px;
-      line-height: 25px;
+      font-size: 14px;
+      line-height: 19px;
       transition: all 350ms ease;
       background-color: rgba($color-primary-red, 0);
-      //@include text-h6;
-
-      @include media(tablet, only) {
-        font-size: 18px;
-        line-height: 1.4;
-      }
 
       @include media(tabletSmall) {
         padding: 20px 10px;

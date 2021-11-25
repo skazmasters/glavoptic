@@ -5,8 +5,9 @@
     @include media(tabletSmall, up) {
       display: grid;
       grid-template-columns: repeat(6, minmax(auto, 190px));
-      grid-gap: 3vh  5vw;
-      align-items: center;
+      grid-gap: 3vh  4.5vw;
+      //align-items: center;
+      //align-content: center;
     }
 
     @include media(tabletSmall) {
@@ -15,16 +16,28 @@
       overflow: auto;
       @include flex-gap(30px)
     }
+
+    @include media(mobile) {
+      max-width: 100vw;
+      margin: 0 -15px;
+    }
   }
 
   &__control {
     @include btn-clear;
     display: flex;
+    align-items: center;
     padding: 1rem;
     cursor: pointer;
     opacity: .3;
 
     @include media(tabletSmall) {
+      flex: 0 0 100px;
+      align-items: center;
+      padding: 9px;
+    }
+
+    @include media(mobileSmall) {
       flex: 0 0 60px;
       align-items: center;
       padding: 9px;
@@ -37,12 +50,36 @@
     }
   }
 
+  &__control-img {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 95%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
   img {
     width: 100%;
   }
 
   &__contents {
-    padding-top: 70px;
+    padding-top: 30px;
   }
 
   &__content {
@@ -62,13 +99,13 @@
 
   &__content-img {
     position: relative;
-    flex: 1 1 505px;
+    flex: 1 1 515px;
     align-self: flex-start;
 
     &::before {
       content: '';
       display: block;
-      padding-top:  math.div(300, 505) * 100%;
+      padding-top:  math.div(400, 515) * 100%;
       background-color: #C4C4C4;
     }
 
@@ -85,15 +122,15 @@
   }
 
   &__content-description {
-    flex: 1 1 630px;
+    flex: 1 1 535px;
 
     @include media(tabletSmall, up) {
-      margin-left: clamp(60px, 8vw, 120px);
+      margin-left: clamp(60px, 8vw, 70px);
     }
   }
 
   &__content-logo {
-    max-width: 130px;
+    max-width: 120px;
 
     @include media(tabletSmall) {
       display: none;
@@ -101,11 +138,11 @@
   }
 
   &__content-title {
-    margin-top: 80px;
+    margin-top: 30px;
     color: $text-black;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 35px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 23px;
 
     @include media(tablet) {
       margin-top: 50px;
@@ -116,24 +153,36 @@
       font-size: 16px;
       line-height: 21px;
     }
-  }
 
-  &__content-text {
-    margin-top: 50px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
-
-    @include media(tablet) {
-      margin-top: 30px;
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    @include media(tabletSmall) {
+    @include media(mobile) {
       margin-top: 30px;
       font-size: 14px;
       line-height: 19px;
+    }
+  }
+
+  &__content-text {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+
+    @include media(tabletSmall) {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    > * {
+      margin: 0;
+    }
+
+    > * + * {
+      margin-top: 15px;
+
+      @include media(tabletSmall) {
+        margin-top: 10px;
+      }
     }
   }
 }

@@ -2,10 +2,10 @@
   padding-bottom: 0;
 
   &__content {
-    margin-top: 80px;
+    margin-top: 30px;
 
-    @include media(tabletSmall) {
-      margin-top: 50px;
-    }
+    //@include media(tabletSmall) {
+    //  margin-top: 50px;
+    //}
   }
 }

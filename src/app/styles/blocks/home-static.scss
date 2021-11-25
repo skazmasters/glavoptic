@@ -1,162 +1,33 @@
 .home-static {
-
   &__content {
     @include media(tabletSmall) {
       padding: 0;
     }
-
-    > * + * {
-      margin-top: 50px;
-
-      @include media(tabletSmall) {
-        margin-top: 30px;
-      }
-    }
   }
 
-  &__text {
-    font-weight: 500;
-    font-size: 20px;
+  &__title {
+    font-weight: bold;
+    font-size: 25px;
     line-height: 30px;
-    color: $text-gray;
-
-    @include media(tablet, only) {
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    @include media(tabletSmall) {
-      font-size: 14px;
-      line-height: 19px;
-    }
-
-    > * + * {
-      margin-top: 30px;
-    }
-
-    &--lg {
-      font-weight: bold;
-      font-size: 30px;
-      line-height: 35px;
-      max-width: 940px;
-
-      @include media(tablet, only) {
-        font-size: 24px;
-        line-height: 1.1;
-      }
-
-      @include media(tabletSmall) {
-        font-size: 16px;
-        line-height: 21px;
-      }
-
-      > * + * {
-        margin-top: 35px;
-      }
-    }
-
-    &--red {
-      color: #B66A5F;
-    }
+    text-transform: uppercase;
   }
 
-  ol, ul {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: $text-gray;
-
-    @include media(tablet, only) {
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    @include media(tabletSmall) {
-      font-size: 14px;
-      line-height: 19px;
-    }
-
-    > * + * {
-      margin-top: 30px;
-
-      @include media(tabletSmall) {
-        margin-top: 19px;
-      }
-    }
-
-    li {
-      position: relative;
-      padding-left: 22px + 40px;
-
-      @include media(tabletSmall) {
-        padding-left: 32px;
-      }
-    }
-  }
-
-  ol {
-    counter-reset: list;
-
-    li {
-      &::before {
-        position: absolute;
-        top: .5em;
-        left: 0;
-        counter-increment: list;
-        content: counter(list);
-        display: inline-block;
-        padding: 3px 13px 7px;
-        color: $color-white;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1;
-        background-color: $color-primary-red;
-        border-radius: 50%;
-        transform: translateY(-50%);
-
-        @include media(tablet, only) {
-          padding: 1px 10px 7px;
-          font-size: 22px;
-        }
-
-        @include media(tabletSmall) {
-          padding: 1px 6px 4px;
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
-  ul {
-    li {
-      padding-left: 32px;
-
-      &::before {
-        position: absolute;
-        top: .5em;
-        left: 0;
-        content: '';
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background-color: $color-primary-red;
-        border-radius: 50%;
-
-        @include media(tabletSmall) {
-          top: .35em
-        }
-      }
-    }
+  &__notes {
+    font-weight: bold;
+    max-width: 420px;
   }
 
   &__columns {
+    margin-top: 30px;
+
     @include media(tabletSmall, up) {
       display: flex;
+      justify-content: space-between;
       @include flex-gap(70px);
     }
 
     > * {
-      flex: 1 1 1px;
+      flex: 0  1 420px;
     }
 
     > * + * {
@@ -167,18 +38,24 @@
   }
 
   &__columns-item {
-    > * + * {
-      margin-top: 30px;
-    }
+    //> * + * {
+    //  margin-top: 30px;
+    //}
+    //
+    //&--offset-sm {
+    //  > * + * {
+    //    margin-top: 15px;
+    //  }
+    //}
   }
 
   &__divider {
     display: block;
-    margin: 80px 0;
+    margin: 50px 0;
     border: 1px solid #C4C4C4;
 
-    @include media(tabletSmall) {
-      margin: 50px 0;
+    @include media(tablet) {
+      margin: 40px 0;
     }
   }
 }

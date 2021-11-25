@@ -29,10 +29,10 @@
 
   &__control {
     @include btn-clear;
-    padding: 30px 55px;
+    padding: 20px 55px;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 19px;
     color: $text-black;
     cursor: pointer;
     border: 2px solid #F7F7F7;
@@ -58,12 +58,12 @@
   }
 
   &__contents {
-    padding: 80px 0 100px;
+    padding: 50px 0;
     background-color: $color-theme-white;
 
-    @include media(tabletSmall) {
-      padding: 30px 0 50px;
-    }
+    //@include media(tabletSmall) {
+    //  padding: 30px 0 50px;
+    //}
   }
 
   &__content {
@@ -72,8 +72,8 @@
 
   &__content-container {
     display: grid;
-    grid-template-areas: '.. title' 'img text';
-    grid-template-columns: minmax(auto, 660px) minmax(auto, 760px);
+    //grid-template-areas: '.. title' 'img text';
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px min(7vw, 125px);
 
     @include media(tabletSmall) {
@@ -85,37 +85,37 @@
     &--video {
       grid-template-areas: 'title' 'video';
       grid-template-columns: 1fr;
-      grid-gap: 80px min(7vw, 125px);
+      grid-gap: 30px;
     }
   }
 
-  &__content-title {
-    grid-area: title;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 35px;
-    color: $text-gray;
-
-    @include media(tablet, only) {
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    @include media(tabletSmall) {
-      font-size: 14px;
-      line-height: 19px;
-    }
-  }
+  //&__content-title {
+  //  //grid-area: title;
+  //  font-weight: bold;
+  //  font-size: 20px;
+  //  line-height: 25px;
+  //  color: $text-gray;
+  //
+  //  //@include media(tablet, only) {
+  //  //  font-size: 24px;
+  //  //  line-height: 1.1;
+  //  //}
+  //
+  //  @include media(tabletSmall) {
+  //    font-size: 14px;
+  //    line-height: 19px;
+  //  }
+  //}
 
   &__content-img {
-    grid-area: img;
+    //grid-area: img;
     position: relative;
     align-self: start;
 
     &:before {
       content: '';
       display: block;
-      padding-top: math.div(700,660) * 100%;
+      padding-top: math.div(400,515) * 100%;
 
       @include media(tabletSmall) {
         padding-top: 56%;
@@ -136,7 +136,7 @@
   }
 
   &__content-text {
-    grid-area: text;
+    //grid-area: text;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -195,5 +195,38 @@
 
   &__content-video {
     grid-area: video;
+    position: relative;
+    height: 100%;
+    background: #C4C4C4;
+    overflow: hidden;
+    aspect-ratio: 845 / 475;
+
+    @supports not (aspect-ratio: 1 / 1) {
+      width: math.div(845,1360) * 100vw;
+    }
+
+    //@include media(tabletSmall, up) {
+    //  width: 49vw;
+    //}
+
+    @include media(tabletSmall) {
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 104%;
+      }
+    }
+
+    img, video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

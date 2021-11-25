@@ -1,16 +1,16 @@
 .static {
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 19px;
 
   @include media(tablet, only) {
-    font-size: 18px;
-    line-height: 1.4;
+    //font-size: 18px;
+    //line-height: 1.4;
   }
 
   @include media(tabletSmall) {
-    font-size: 14px;
-    line-height: 19px;
+    //font-size: 14px;
+    //line-height: 19px;
   }
 
   > * {
@@ -18,7 +18,7 @@
   }
 
   > * + * {
-    margin-top: 30px;
+    margin-top: 25px;
 
     @include media(tabletSmall) {
       margin-top: 15px;
@@ -26,20 +26,8 @@
   }
 
   ol {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+    counter-reset: list;
     color: $text-gray;
-
-    @include media(tablet, only) {
-      font-size: 18px;
-      line-height: 1.4;
-    }
-
-    @include media(tabletSmall) {
-      font-size: 14px;
-      line-height: 19px;
-    }
 
     > * + * {
       margin-top: 30px;
@@ -47,30 +35,28 @@
 
     li {
       position: relative;
-      padding-left: 22px + 40px;
+      padding-left: 13px + 25px;
 
-      @include media(tabletSmall) {
-        padding-left: 19px + 10px;
+      @include media(mobile) {
+        padding-left: 13px + 20px;
       }
-    }
-  }
 
-  ol {
-    counter-reset: list;
-
-    li {
       &::before {
         position: absolute;
         top: .5em;
         left: 0;
         counter-increment: list;
         content: counter(list);
-        display: inline-block;
-        padding: 3px 13px 7px;
+        display: inline-flex;
+        justify-content: center;
+        //align-items: center;
+        padding: 4px 9px 6px;
+        width: 25px;
+        height: 25px;
         color: $color-white;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 1;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 15px;
         background-color: $color-primary-red;
         border-radius: 50%;
         transform: translateY(-50%);
@@ -79,8 +65,11 @@
           font-size: 18px;
         }
 
-        @include media(tabletSmall) {
-          padding: 1px 6px 4px;
+        @include media(mobile) {
+          top: .65em;
+          width: 20px;
+          height: 20px;
+          padding: 1px 6px 3px;
           font-size: 14px;
           line-height: 1;
         }
@@ -93,52 +82,35 @@
     max-width: 760px;
 
     > * + * {
-      margin-top: 30px;
-
-      @include media(tabletSmall) {
-        margin-top: 15px;
-      }
-    }
-
-    + * {
-      margin-top: 50px;
-
-      @include media(tabletSmall) {
-        margin-top: 30px;
-      }
+      margin-top: 15px;
     }
 
     li {
       position: relative;
-      padding-left: 31px;
+      padding-left: 20px;
 
       &::before {
         position: absolute;
         top: .5em;
         left: 0;
         content: '';
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
         background-color: $color-primary-red;
         border-radius: 50%;
 
-        @include media(tabletSmall) {
-          top: .35em
-        }
+        //@include media(tabletSmall) {
+        //  top: .35em
+        //}
       }
     }
   }
 
-  h4 {
+  h3, h4 {
     font-weight: bold;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 25px;
     color: $text-gray;
-
-    @include media(tablet, only) {
-      font-size: 24px;
-      line-height: 1.1;
-    }
 
     @include media(tabletSmall) {
       font-size: 14px;
@@ -146,11 +118,22 @@
     }
 
     + * {
-      margin-top: 50px;
+      margin-top: 25px;
 
       @include media(tabletSmall) {
-        margin-top: 30px;
+        margin-top: 15px;
       }
+    }
+  }
+
+  p + ul {
+    margin-top: 15px;
+  }
+
+
+  &--offset-sm {
+    > * + * {
+      margin-top: 15px;
     }
   }
 }

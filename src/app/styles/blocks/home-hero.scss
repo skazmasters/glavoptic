@@ -6,6 +6,11 @@
   min-height: 500px;
 
   @include media(tabletSmall, up) {
+    height: clamp(450px, calc(100vh - 50px), 520px);
+    //min-height: 600px;
+  }
+
+  @include media(tablet, up) {
     height: clamp(500px, calc(100vh - 50px), 690px);
     //min-height: 600px;
   }
@@ -77,6 +82,11 @@
       padding-top: 50px;
       padding-bottom: 50px;
     }
+
+    @include media(mobile) {
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
   }
 
   &__title {
@@ -87,8 +97,8 @@
     line-height: 1.1;
     color: $text-black;
 
-    @include media(tabletSmall) {
-      font-size: clamp(32px, 7vw, 100px);
+    @include media(tablet) {
+      font-size: 50px;
       line-height: 1.1;
       max-width: 50vw;
     }
@@ -98,7 +108,7 @@
     }
 
     @include media(sm, down, true) {
-      font-size: clamp(32px, 7vw, 80px);
+      font-size: clamp(30px, 4vw, 70px);
       line-height: 1.1;
     }
   }

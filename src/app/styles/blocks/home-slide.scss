@@ -20,106 +20,95 @@
 
   &__container {
     width: 100%;
-
     background-color: $color-white;
 
     @include media(tabletSmall, up) {
       height: 100%;
-      max-width: 60vw;
-      min-height: 69.5vh;
-      padding-top: 9.25vh;
-      padding-left: 7.2vw;
-      padding-bottom: 9.25vh;
+      max-width: 50vw;
+      min-height: 67vh;
+      padding: 13.5vh 5.1vw 7.25vh 8.85vw;
       border-radius: 0 375px 375px 0;
     }
 
+    @include media(tablet, only) {
+      min-height: 370px;
+      padding: 70px 50px 40px 90px;
+    }
+
     @include media(tabletSmall) {
+      min-height: auto;
       padding: 15px 20px 60px;
     }
   }
 
   &__content {
     max-width: 505px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.25;
+
+    @include media(tablet) {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    > * {
+      margin: 0;
+    }
+
+    > * + * {
+      margin-top: 15px;
+    }
 
     ul {
-      margin-top: 30px;
       color: $text-gray;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 25px;
-
-      @include media(tablet, only) {
-        margin-top: 25px;
-        font-size: 18px;
-        line-height: 1.4;
-      }
-
-      @include media(tabletSmall) {
-        margin-top: 19px;
-        font-size: 14px;
-        line-height: 19px;
-      }
 
       > * + * {
-        margin-top: 25px;
-
-        @include media(tabletSmall) {
-          margin-top: 19px;
-        }
+        margin-top: 0;
       }
     }
 
     li {
       position: relative;
-      padding-left: 2rem;
+      padding-left: .75em;
 
       &::before {
-        content: '';
+        content: '-';
         position: absolute;
         top: .5em;
-        left: .75em;
+        left: 0;
+        transform: translateY(-50%);
         display: inline-block;
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background-color: $text-gray;
       }
     }
   }
 
   &__title {
     font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 1.25;
     color: $text-gray;
 
-    @include media(tablet, only) {
-      font-size: 24px;
-      line-height: 1.1;
-    }
-
-    @include media(tabletSmall) {
+    @include media(mobile) {
       font-size: 14px;
       line-height: 19px;
     }
 
     span {
       display: block;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       font-style: normal;
       font-weight: bold;
-      font-size: 100px;
-      line-height: 105px;
+      font-size: 45px;
+      line-height: 1.1;
       color: $text-black;
 
       @include media(tablet, only) {
-        margin-bottom: 30px;
-        font-size: 70px;
-        line-height: 1;
+        font-size: 35px;
       }
 
-      @include media(tabletSmall) {
+      @include media(mobile) {
         font-size: 16px;
         line-height: 21px;
         margin-bottom: 15px;

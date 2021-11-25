@@ -17,6 +17,7 @@ export class Slider {
     let interval: ReturnType<typeof setInterval> | undefined
 
     function autoplay(run) {
+      return false
       clearInterval(interval)
       interval = setInterval(() => {
         if (run && slider) {
