@@ -5,14 +5,12 @@
   position: relative;
   min-height: 500px;
 
-  @include media(tabletSmall, up) {
+  @include media(tablet, only) {
     height: clamp(450px, calc(100vh - 50px), 520px);
-    //min-height: 600px;
   }
 
-  @include media(tablet, up) {
+  @include media(mobile, up) {
     height: clamp(500px, calc(100vh - 50px), 690px);
-    //min-height: 600px;
   }
 
   @include media(mobile) {
