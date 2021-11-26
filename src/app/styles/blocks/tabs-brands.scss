@@ -5,7 +5,7 @@
     @include media(tabletSmall, up) {
       display: grid;
       grid-template-columns: repeat(6, minmax(auto, 190px));
-      grid-gap: 3vh  4.5vw;
+      grid-gap: 3vh 4.5vw;
       //align-items: center;
       //align-content: center;
     }
@@ -92,7 +92,7 @@
     display: flex;
     //gap: clamp(60px, 8vw, 120px);
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       display: block;
     }
   }
@@ -124,8 +124,12 @@
   &__content-description {
     flex: 1 1 535px;
 
-    @include media(tabletSmall, up) {
+    @include media(mobile, up) {
       margin-left: clamp(60px, 8vw, 70px);
+    }
+
+    @include media(tabletSmall) {
+      margin-left: clamp(30px, 5vw, 50px);
     }
   }
 
@@ -133,6 +137,10 @@
     max-width: 120px;
 
     @include media(tabletSmall) {
+      max-width: 80px;
+    }
+
+    @include media(mobile) {
       display: none;
     }
   }
@@ -149,7 +157,7 @@
     }
 
     @include media(tabletSmall) {
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: 16px;
       line-height: 21px;
     }

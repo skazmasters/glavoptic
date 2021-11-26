@@ -5,11 +5,11 @@
   position: relative;
   min-height: 500px;
 
-  @include media(tablet, only) {
+  @include media(tabletSmall, up) {
     height: clamp(450px, calc(100vh - 50px), 520px);
   }
 
-  @include media(mobile, up) {
+  @include media(tablet, up) {
     height: clamp(500px, calc(100vh - 50px), 690px);
   }
 
@@ -18,7 +18,7 @@
   }
 
   &__bg {
-    @include media(tabletSmall, up) {
+    @include media(mobile, up) {
       position: absolute;
       top: 0;
       left: 0;
@@ -30,7 +30,7 @@
       align-items: center;
     }
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       margin-top: 50px;
     }
   }
@@ -51,7 +51,7 @@
     //  width: 49vw;
     //}
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       &:before {
         content: '';
         display: block;

@@ -3,12 +3,16 @@
 .home-about {
   overflow: hidden;
 
-  @include media(tabletSmall, up) {
+  @include media(mobile, up) {
     //padding-top: clamp(180px, 10vh, 320px);
     padding-top: 210px;
   }
 
   @include media(tabletSmall) {
+    padding-top: 180px;
+  }
+
+  @include media(mobile) {
     padding-top: 120px;
   }
 
@@ -18,7 +22,7 @@
     //align-items: center;
     justify-content: space-between;
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       flex-wrap: wrap;
     }
   }
@@ -26,7 +30,7 @@
   &__content {
     flex: 0 1 515px;
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       flex-basis: 100%;
       margin-top: 20px;
     }
@@ -41,10 +45,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: min(25vw, 320px);
+    max-width: clamp(100px, 25vw, 320px);
 
-    @include media(tabletSmall) {
-      max-width: min(50vw, 400px);
+    @include media(mobile) {
+      max-width: clamp(100px, 50vw, 245px);
     }
 
     img {
@@ -84,12 +88,13 @@
     position: relative;
     flex: 0 1 535px;
     display: flex;
+    align-self: start;
 
-    @include media(tabletSmall, up) {
+    @include media(mobile, up) {
       margin-left: 5vw;
     }
 
-    @include media(tabletSmall) {
+    @include media(mobile) {
       flex-basis: 100%;
       order: -1;
     }
@@ -100,7 +105,7 @@
       width: 100%;
       padding-top: math.div(460,535) * 100%;
 
-      @include media(tabletSmall) {
+      @include media(mobile) {
         padding-top: math.div(300,350) * 100%;
       }
     }
