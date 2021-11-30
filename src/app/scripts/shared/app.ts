@@ -5,6 +5,7 @@ import { InnerSidebar } from '@app/shared/inner-sidebar/inner-sidebar'
 import { ScrollToLink } from '@app/core/scroll-to-link'
 import { manager } from '@app/shared/popups'
 import { FAB } from '@app/shared/fab'
+import { HeroVideo } from '@app/shared/hero-video'
 
 export const app = (): void => {
   document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +16,8 @@ export const app = (): void => {
     document.querySelectorAll('.js-scroll-to').forEach((element: HTMLElement) => new ScrollToLink(element))
     // document.querySelectorAll('.js-scroll-to-top').forEach((element: HTMLElement) => new ScrollToTop(element))
     document.querySelectorAll('.js-fab').forEach((element: HTMLElement) => new FAB(element))
+
+    HeroVideo()
 
     document.querySelectorAll('.js-popup').forEach((popup: HTMLElement): void => manager.add(popup))
     manager.updatePopups()
