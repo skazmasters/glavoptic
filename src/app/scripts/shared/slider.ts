@@ -8,8 +8,6 @@ export class Slider {
   constructor(el: sliderNode) {
     this.$node = el
 
-    // console.log()
-    // console.log('inited')
     this.setup()
   }
 
@@ -17,7 +15,7 @@ export class Slider {
     let interval: ReturnType<typeof setInterval> | undefined
 
     function autoplay(run) {
-      return false
+      // return false
       clearInterval(interval)
       interval = setInterval(() => {
         if (run && slider) {
