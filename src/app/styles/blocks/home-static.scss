@@ -10,6 +10,11 @@
     font-size: 25px;
     line-height: 30px;
     text-transform: uppercase;
+
+    @include media(mobile) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 
   &__notes {
@@ -35,18 +40,6 @@
         margin-top: 30px;
       }
     }
-  }
-
-  &__columns-item {
-    //> * + * {
-    //  margin-top: 30px;
-    //}
-    //
-    //&--offset-sm {
-    //  > * + * {
-    //    margin-top: 15px;
-    //  }
-    //}
   }
 
   &__divider {

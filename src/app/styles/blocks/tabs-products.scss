@@ -45,11 +45,13 @@
     }
 
     &:hover {
-      background-color: lighten($color-theme-white, 5%);
+      background-color: $color-theme-white;
+      border-color: $color-theme-white;
     }
 
     &.active {
       background-color: $color-theme-white;
+      border-color: $color-theme-white;
     }
 
     &:not(:last-child) {
@@ -109,16 +111,16 @@
   }
 
   &__content {
-    @include media(tablet, only) {
-      padding-right: calc(10px + 200px - (100vw - 880px) / 2);
-    }
-
     @include media(mobile, up) {
       display: flex;
       @include container;
       padding-right: calc(15px + 230px - (100vw - 1160px) / 2);
-
     }
+
+    @include media(tablet, only) {
+      padding-right: calc(10px + 200px - (100vw - 880px) / 2);
+    }
+
     //  margin: 0 calc(-1 * (100vw - 880px) / 2) 0 calc((100vw - 880px) / 2);
 
     //@include media(tablet) {

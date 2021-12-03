@@ -45,11 +45,13 @@
     }
 
     &:hover {
-      background-color: lighten($color-theme-white, 5%);
+      background-color: $color-theme-white;
+      border-color: $color-theme-white;
     }
 
     &.active {
       background-color: $color-theme-white;
+      border-color: $color-theme-white;
     }
 
     &:not(:last-child) {
@@ -72,9 +74,17 @@
 
   &__content-container {
     display: grid;
-    //grid-template-areas: '.. title' 'img text';
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px min(7vw, 125px);
+    margin-top: 50px;
+
+    @include media(tabletSmall) {
+      margin-top: 30px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     @include media(tabletSmall) {
       grid-template-areas: 'img' 'title' 'text';
@@ -89,26 +99,7 @@
     }
   }
 
-  &__content-title {
-  //  //grid-area: title;
-  //  font-weight: bold;
-  //  font-size: 20px;
-  //  line-height: 25px;
-  //  color: $text-gray;
-  //
-  //  //@include media(tablet, only) {
-  //  //  font-size: 24px;
-  //  //  line-height: 1.1;
-  //  //}
-
-    @include media(tabletSmall) {
-      font-size: 14px;
-      line-height: 19px;
-    }
-  }
-
   &__content-img {
-    //grid-area: img;
     position: relative;
     align-self: start;
 
@@ -136,7 +127,6 @@
   }
 
   &__content-text {
-    //grid-area: text;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -162,35 +152,6 @@
     b {
       font-weight: 800;
     }
-
-    //ul {
-    //  color: $text-gray;
-    //  max-width: 760px;
-    //
-    //  > * + * {
-    //    margin-top: 30px;
-    //
-    //    @include media(tabletSmall) {
-    //      margin-top: 19px;
-    //    }
-    //  }
-    //
-    //  li {
-    //    position: relative;
-    //    padding-left: 31px;
-    //
-    //    &::before {
-    //      position: absolute;
-    //      top: .5em;
-    //      left: 0;
-    //      content: '';
-    //      width: 10px;
-    //      height: 10px;
-    //      background-color: $color-primary-red;
-    //      border-radius: 50%;
-    //    }
-    //  }
-    //}
   }
 
   &__content-video {
@@ -205,10 +166,6 @@
       width: math.div(845,1360) * 100vw;
     }
 
-    //@include media(tabletSmall, up) {
-    //  width: 49vw;
-    //}
-
     @include media(tabletSmall) {
       &:before {
         content: '';
@@ -217,7 +174,11 @@
       }
     }
 
-    img, video {
+    img,
+    iframe,
+    object,
+    embed,
+    video {
       position: absolute;
       top: 0;
       left: 0;

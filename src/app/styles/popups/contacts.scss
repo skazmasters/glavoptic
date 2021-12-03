@@ -21,7 +21,7 @@
   }
 
   &__content {
-    margin-top: 50px;
+    margin-top: 30px;
 
     @include media(mobile, up) {
       display: flex;
@@ -29,10 +29,10 @@
     }
 
     @include media(mobile) {
-      margin-top: 30px;
+      margin-top: 25px;
 
       > * + * {
-        margin-top: 25px;
+        margin-top: 15px;
       }
     }
   }
@@ -43,10 +43,11 @@
     }
   }
 
-  &__item {
+  &__item,
+  &__item h3 {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 21px;
 
     @include media(mobile) {
       font-size: 14px;
@@ -58,6 +59,11 @@
     display: block;
     font-weight: 800;
     color: $text-gray;
+
+    > * {
+      color: inherit;
+      font-size: inherit;
+    }
 
     a {
       font-weight: 800;
