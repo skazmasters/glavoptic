@@ -47,18 +47,6 @@
       width: math.div(665,1360) * 100vw;
     }
 
-    //@include media(tabletSmall, up) {
-    //  width: 49vw;
-    //}
-
-    @include media(mobile) {
-      &:before {
-        content: '';
-        display: block;
-        padding-top: 104%;
-      }
-    }
-
     img, video {
       position: absolute;
       top: 0;
@@ -70,8 +58,8 @@
       height: 100%;
       object-fit: cover;
       border-radius: 50% 50% 0 0;
-      overflow: hidden;
-      aspect-ratio: 665 / 690;
+      //overflow: hidden;
+      //aspect-ratio: 665 / 690;
     }
   }
 
