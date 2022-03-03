@@ -35,7 +35,7 @@
     line-height: 19px;
     color: $text-black;
     cursor: pointer;
-    border: 2px solid #F7F7F7;
+    border: 2px solid #f7f7f7;
     white-space: nowrap;
 
     @include media(tabletSmall) {
@@ -158,12 +158,16 @@
     grid-area: video;
     position: relative;
     height: 100%;
-    background: #C4C4C4;
+    background: #c4c4c4;
     overflow: hidden;
     aspect-ratio: 845 / 475;
 
     @supports not (aspect-ratio: 1 / 1) {
-      width: math.div(845,1360) * 100vw;
+      &::after {
+        content: '';
+        display: block;
+        padding-top: math.div(475,845) * 100%;
+      }
     }
 
     img,
